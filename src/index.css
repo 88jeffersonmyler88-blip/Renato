@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --rswf-red: #C71A24;
+    --rswf-red-bright: #E0222D;
+    --rswf-red-dark: #8F0F16;
+    --rswf-red-shadow: #55080E;
+    --rswf-red-deep: #380407;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: #070709;
+    color: #f5f5f5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* RSWF Logo 3D Layered Color System */
+.bg-rswf-red {
+  background-color: #C71A24;
+}
+
+.bg-rswf-dark {
+  background-color: #8F0F16;
+}
+
+.text-rswf-red {
+  color: #C71A24;
+}
+
+.border-rswf-red {
+  border-color: #C71A24;
+}
+
+.border-rswf-dark {
+  border-color: #8F0F16;
+}
+
+.rswf-gradient-btn {
+  background: linear-gradient(135deg, #E0222D 0%, #C71A24 50%, #8F0F16 100%);
+  box-shadow: 0 4px 20px rgba(199, 26, 36, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.rswf-gradient-btn:hover {
+  background: linear-gradient(135deg, #F02834 0%, #D41C27 50%, #A3121A 100%);
+  box-shadow: 0 6px 26px rgba(224, 34, 45, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.rswf-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F5F5F5 45%, #E0222D 75%, #C71A24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rswf-red-text-gradient {
+  background: linear-gradient(135deg, #F02834 0%, #C71A24 50%, #8F0F16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom intense red glow effects from the logo */
+.glow-red {
+  box-shadow: 0 0 25px rgba(199, 26, 36, 0.45);
+}
+
+.glow-red-lg {
+  box-shadow: 0 0 45px rgba(199, 26, 36, 0.6);
+}
+
+.glow-red-text {
+  text-shadow: 0 0 20px rgba(199, 26, 36, 0.7);
+}
+
+.rswf-card-border {
+  border: 1px solid rgba(143, 15, 22, 0.4);
+}
+
+.rswf-card-border:hover {
+  border-color: rgba(199, 26, 36, 0.7);
+}
+
+.carbon-pattern {
+  background-color: #070709;
+  background-image: 
+    linear-gradient(45deg, #0e0e12 25%, transparent 25%), 
+    linear-gradient(-45deg, #0e0e12 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #0e0e12 75%), 
+    linear-gradient(-45deg, transparent 75%, #0e0e12 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C71A24;
+}
+
+/* Seamless infinite horizontal carousel */
+@keyframes renato-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-renato-marquee {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  animation: renato-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-gallery-marquee {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  animation: renato-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-renato-marquee:hover,
+.animate-renato-marquee.is-paused,
+.animate-gallery-marquee:hover,
+.animate-gallery-marquee.is-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-renato-marquee,
+  .animate-gallery-marquee {
+    animation: none;
+  }
+}

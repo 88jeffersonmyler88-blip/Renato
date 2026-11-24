@@ -1,0 +1,6 @@
+{
+  "name": "PELICAR - Películas de Controle Solar",
+  "description": "PELICAR - Películas especiais de controle solar e insulfilm automotivo de alta performance em Itajaí - SC. 5.0 estrelas no Google.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
